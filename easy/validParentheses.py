@@ -4,16 +4,20 @@
 # hint remove matching brackets
 # hint: use stack DS
 
-def isValid(s : str) -> bool:
+def isValid(expression : str) -> bool:
 
 	# use the stack data structure
 	stack = []
 
 	# all possible combinations
-	brackets = { ")":"(", "]":"[", "}":"{" }
+	brackets = {
+		")" : "(",
+		"]" : "[",
+		"}" : "{" 
+	}
 
 	# check every elements of the string
-	for char in s:
+	for char in expression:
 
 		# if its a closing bracket
 		if char in brackets:
@@ -39,7 +43,7 @@ def isValid(s : str) -> bool:
 
 # test the solution
 
-cases = ["()", "()[]{}", "(]", "([)]", "{[]}"]
+cases = ["()", "()[]{}", "(]", "([)]", "{[]}", "{{[()]}}"]
 
 for case in cases:
 	if isValid(case):
