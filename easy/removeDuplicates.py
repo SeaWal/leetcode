@@ -1,5 +1,6 @@
 # Leetcode Problem 26. Remove Duplicates from Sorted Array (Easy)
 
+# SOLUTION IS PROBABLY OVERLY COMPLICATED
 from typing import List
 
 def removeDuplicates(nums: List[int]) -> int:
@@ -34,7 +35,7 @@ def removeDuplicates(nums: List[int]) -> int:
 	nums[dup+1:] = [None for i in range(len(nums[dup+1:]))]
 
 	# count the non-duplicate element
-	return len([x for x in nums if x is not None])
+	return dup+1
 
 
 # testing the solution
